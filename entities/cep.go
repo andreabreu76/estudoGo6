@@ -1,24 +1,12 @@
 package entities
 
-/*
-{
-	"status":200,
-	"ok":true,
-	"code":"21931-390",
-	"state":"RJ",
-	"city":"Rio de Janeiro",
-	"district":"Jardim Guanabara",
-	"address":"Rua Rui Vaz Pinto",
-	"statusText":"ok"
-}
-*/
 type CepResponse struct {
-	Status     string
-	OK         string
-	Code       string
-	State      string
-	City       string
-	District   string
-	Address    string
-	StatusText string
+	Status     int    `json:"status"`
+	OK         bool   `json:"ok"`
+	Code       string `json:"code"`
+	State      string `json:"state"`
+	City       string `json:"city"`
+	District   string `json:"district"`
+	Address    string `json:"address"`
+	StatusText string `json:"statusText"`
 }
