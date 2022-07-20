@@ -12,5 +12,7 @@ func Setup() *mux.Router {
 
 	prefixVersion.HandleFunc("/", handlers.Index).Methods("GET")
 
+	prefixVersion.HandleFunc("/cep/{cep}", handlers.ConsultaCep).Methods("GET")
+
 	return router
 }
