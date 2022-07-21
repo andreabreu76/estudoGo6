@@ -39,6 +39,12 @@ func ConsultaCep(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	if !cepresponse.OK {
+		log.Println("CEP nao encontrado: ", cepresponse.StatusText)
+		utils.JsonResponse(w, http.StatusBadRequest, "Erro ao consultar CEP")
+		return
+	}
+
 	utils.JsonResponse(w, http.StatusOK, cepresponse)
 
 }
